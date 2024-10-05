@@ -1,9 +1,9 @@
 import React from 'react'
-import Navbar from '../components/Navbar'
-import Home from '../components/Home'
-import Gen_all from '../components/devices/Gen_all'
-import Third from '../components/ThirdSlide/Third/Third'
-import Footer from '../components/Footer/Footer'
+import Navbar from '../C`omponents/Navbar'
+import Home from '../Components/Home'
+import Gen_all from '../Components/devices/Gen_all'
+import Third from '../Components/ThirdSlide/Third/Third'
+import Footer from '../Components/Footer/Footer'
 
 export default function HomeLayout() {
     return (

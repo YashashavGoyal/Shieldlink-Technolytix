@@ -44,13 +44,13 @@ app.get('/', (req, res) => {
     res.send("Welcome To ShieldLink Technolytix");
 })
 
-const port = 2024;
-const host = '127.0.0.1';
+const port = 4000;
+// const host = '127.0.0.1';
 
 
 connectDb().then(() => {
     app.listen(port, () => {
-        console.log(`Server is started on http://${host}:${port}`);
+        console.log(`Server is started on http://127.0.0.1:${port}`);
 
     })
 })
