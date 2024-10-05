@@ -1,5 +1,5 @@
 import React from 'react'
-import Navbar from '../C`omponents/Navbar'
+import Navbar from '../Components/Navbar'
 import Home from '../Components/Home'
 import Gen_all from '../Components/devices/Gen_all'
 import Third from '../Components/ThirdSlide/Third/Third'

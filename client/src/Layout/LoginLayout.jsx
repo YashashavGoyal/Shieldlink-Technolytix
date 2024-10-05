@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import Navbar from '../components/Navbar';
+import Navbar from '../Components/Navbar';
 import './Login.css';
-import Footer from '../components/Footer/Footer';
+import Footer from '../Components/Footer/Footer';
 import img from '../assets/images/Login.png';
-import LoginSvg from '../components/LoginSvg/LoginSvg';
+import LoginSvg from '../Components/LoginSvg/LoginSvg';
 import { useAuth } from '../utils/auth';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
