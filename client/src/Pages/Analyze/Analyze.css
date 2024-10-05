@@ -1,0 +1,176 @@
+
+/* Device List And Graph */
+.content main .device-data {
+    display: flex;
+    flex-wrap: wrap;
+    grid-gap: 24px;
+    margin-top: 24px;
+    width: 100%;
+    color: var(--dark);
+}
+
+.content main .device-data>div {
+    border-radius: 20px;
+    background: var(--light);
+    padding: 24px;
+    overflow-x: auto;
+}
+
+.content main .device-data .header {
+    display: flex;
+    align-items: center;
+    grid-gap: 16px;
+    margin-bottom: 24px;
+}
+
+.content main .device-data .header h3 {
+    margin-right: auto;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.content main .device-data .header .bx {
+    cursor: pointer;
+}
+
+.content main .device-data .device-activity {
+    flex-grow: 1;
+    flex-basis: 500px;
+}
+.content main .device-data .device-list-header {
+    flex-grow: 1;
+    flex-basis: 300px;
+}
+
+.content main .device-data .device-list-header .device-list {
+    width: 100%;
+}
+
+.content main .device-data .device-list-header .device-list li {
+    width: 100%;
+    margin-bottom: 16px;
+    background: var(--grey);
+    padding: 14px 10px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.content main .device-data .device-list-header .device-list li .device-list-title {
+    display: flex;
+    align-items: center;
+}
+
+.content main .device-data .device-list-header .device-list li .device-list-title p {
+    margin-left: 6px;
+}
+
+.content main .device-data .device-list-header .device-list li .bx {
+    cursor: pointer;
+}
+
+.content main .device-data .device-list-header .device-list li.working {
+    border-left: 10px solid var(--success);
+}
+
+.content main .device-data .device-list-header .device-list li.not-working {
+    border-left: 10px solid var(--danger);
+}
+
+.content main .device-data .device-list-header .device-list li:last-child {
+    margin-bottom: 0;
+}
+
+.content main .alert-records {
+    flex-grow: 1;
+    flex-basis: 500px;
+    border-radius: 20px;
+    background: var(--light);
+    padding: 24px;
+    overflow-x: auto;
+    margin-top: 24px;
+    color: var(--dark);
+}
+
+.content main .alert-records{
+    flex-grow: 1;
+    flex-basis: 500px;
+    border-radius: 20px;
+    background: var(--light);
+    padding: 24px;
+    overflow-x: auto;
+    margin-top: 24px;
+    color: var(--dark);
+}
+
+.content main .alert-records .header {
+    display: flex;
+    align-items: center;
+    grid-gap: 16px;
+    margin-bottom: 24px;
+}
+
+.content main .alert-records .header h3 {
+    margin-right: auto;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.content main .alert-records .header .bx {
+    cursor: pointer;
+}
+
+.content main .alert-records table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 340px;
+}
+
+.content main .alert-records table th {
+    padding-bottom: 12px;
+    font-size: 13px;
+    text-align: left;
+    border-bottom: 1px solid var(--grey);
+}
+
+.content main .alert-records table td {
+    padding: 16px 0;
+}
+
+.content main .alert-records table tr td:first-child {
+    display: flex;
+    align-items: center;
+    grid-gap: 12px;
+    padding-left: 6px;
+}
+
+
+.content main .alert-records table tbody tr {
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.content main .alert-records table tbody tr:hover {
+    background: var(--grey);
+}
+
+.content main .alert-records table tr td .status {
+    font-size: 10px;
+    padding: 6px 16px;
+    color: var(--light);
+    border-radius: 20px;
+    font-weight: 700;
+}
+
+.content main .alert-records table tr td .status.completed {
+    background: var(--success);
+}
+
+.content main .alert-records table tr td .status.process {
+    background: var(--primary);
+}
+
+.content main .alert-records table tr td .status.pending {
+    background: var(--warning);
+}

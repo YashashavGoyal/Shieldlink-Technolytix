@@ -1,0 +1,40 @@
+.genBoxContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 10px ;
+}
+
+.genBox {
+    width: 100px;
+    height: 100px;
+    background: #f0f0f0;
+    margin: 0 10px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.genBox img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+}
+
+.genBox span {
+    margin-top: 5px;
+    font-size: 0.9rem;
+    color: #333;
+}
+
+.genBox:hover {
+    transform: scale(1.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}

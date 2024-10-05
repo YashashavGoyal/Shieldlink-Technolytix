@@ -1,0 +1,62 @@
+.advantage_one {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    max-width: 300px;
+    flex: 1;
+    /* margin: 20px; */
+    margin: 10px;
+}
+
+.advantage_one:hover {
+    transform: scale(1.05);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+}
+
+.icon_here {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.icon {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, #00c6ff, #0072ff); /* Icon gradient */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 2rem;
+    margin: 0 auto; /* Center the icon horizontally */
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.icon svg {/* Ensures the icon fully occupies the circle */
+    height: 50px; /* Ensures the icon fully occupies the circle */
+}
+
+.icon:hover {
+    transform: rotate(15deg);
+}
+
+
+
+
+.advantage_heading h2 {
+    font-size: 1.7rem;
+    color: #f0f8ff;
+    margin-bottom: 15px;
+}
+
+.advantage_para p {
+    font-size: 1.2rem;
+    color: #d1e0e0;
+    margin: 0;
+}

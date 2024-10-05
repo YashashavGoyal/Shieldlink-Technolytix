@@ -1,0 +1,55 @@
+.Text_Content {
+    text-align: center;
+    color: #f0f8ff;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+.third_Header h1 {
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+    color: darkslategrey;
+    margin: 10px 0;
+}
+
+.Third_para p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #d1e0e0;
+    text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
+    margin: 10px 20px;
+}
+
+@media screen and (max-width: 768px) {
+    .third_Header h1 {
+        font-size: 2rem;
+        letter-spacing: 1.5px;
+    }
+    .Third_para p {
+        font-size: 1rem;
+        margin: 8px 15px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .third_Header h1 {
+        font-size: 1.8rem;
+        letter-spacing: 1.2px;
+    }
+    .Third_para p {
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .third_Header h1 {
+        font-size: 1.5rem;
+        letter-spacing: 1px;
+    }
+    .Third_para p {
+        font-size: 0.9rem;
+        line-height: 1.5;
+        margin: 5px 10px;
+    }
+}

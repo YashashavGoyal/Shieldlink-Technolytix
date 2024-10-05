@@ -1,0 +1,147 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(45deg, #0d3b87 30%, #020c30 50%);
+}
+
+.login-body {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    min-height: 100vh;
+    padding: 80px 20px;
+    /* background-color: #f7f8fa; */
+}
+
+.login-container {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    position: relative;
+    z-index: 10 ;
+}
+
+.login-container h3 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+    font-weight: bold;
+}
+
+.login-container label {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.login-container input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+    font-size: 14px;
+}
+
+.login-container input:focus {
+    border-color: #4a90e2;
+    box-shadow: 0 0 5px rgba(74, 144, 226, 0.5);
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #4a90e2;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #357abd;
+}
+
+.login-body .login-img {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-body .login-img svg {
+    position: absolute;
+    z-index: 0;
+    width: 100%;
+}
+
+.login-body .login-img img {
+    position: relative;
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .login-body {
+        flex-direction: row;
+    }
+    
+    .login-img {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-right: 40px;
+    }
+    
+    .login-img img {
+        max-width: 400px;
+        height: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .login-body {
+        flex-direction: column-reverse;
+        gap: 20px;
+    }
+}
+
+.background {
+    position: absolute;
+    top: -30px;
+    left: -30px;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    border-radius: 8px;
+}
+
+.shape {
+    background: linear-gradient(135deg, #4a90e2, #9013fe);
+    border-radius: 50%;
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    top: -50px;
+    right: -50px;
+    opacity: 0.2;
+}
+
+.shape:nth-child(2) {
+    top: -100px;
+    left: -80px;
+    background: linear-gradient(135deg, #9013fe, #4a90e2);
+    width: 150px;
+    height: 150px;
+}

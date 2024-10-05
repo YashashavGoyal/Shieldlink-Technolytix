@@ -1,0 +1,39 @@
+/* Dropdown content */
+details summary {
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #ecf0f1;
+}
+
+.dropdown-content {
+    position: absolute;
+    top: 80%;
+    right: 0px;
+    z-index: 10;
+    padding: 10px;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    /* transition: max-height 0.3s ease, opacity 0.3s ease; */
+    transition: all 0.5s ease;
+    background: var(--light);
+}
+
+details[open] .dropdown-content {
+    max-height: 300px;
+    opacity: 1;
+}
+
+.bx-chevron-down {
+    transition: transform 0.3s ease;
+}
+
+details[open] .bx-chevron-down {
+    transform: rotate(180deg);
+}
+
+.sidebar.close details summary .bx-chevron-down {
+    display: none; /* Hides the chevron in collapsed sidebar */
+}

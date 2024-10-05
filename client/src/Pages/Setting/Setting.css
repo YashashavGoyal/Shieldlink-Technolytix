@@ -1,0 +1,121 @@
+.content main .setting-container {
+    /* background: blanchedalmond; */
+    width: 100%;
+    height: fit-content;
+    margin-top: 24px;
+    display: flex;
+    justify-content: space-evenly;
+    gap: 16px;
+    flex-wrap: wrap;
+    color: var(--dark);
+}
+
+.content main .setting-container .general-setting {
+    background: var(--light);
+    flex-grow: 1;
+    flex-basis: 400px;
+    min-height: 450px;
+    border-radius: 24px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding: 16px;
+}
+
+.content main .setting-container .general-setting .box-container {
+    flex-basis: 170px;
+    flex-grow: 1;
+    background: var(--light-primary);
+    border-radius: calc(24px - 8px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.content main .general-setting .box-container .bx {
+    font-size: 3rem;
+}
+
+.content main .general-setting .box-container span {
+    transform: translateY(100%);
+    opacity: 0;
+    transition: all 0.5s;
+}
+
+.content main .general-setting .box-container:hover span {
+    transform: translateY(0%);
+    opacity: 1;
+}
+
+.content main .setting-container .chat-config {
+    background: var(--light);
+    flex-grow: 1;
+    flex-basis: 600px;
+    height: fit-content;
+    border-radius: 24px;
+}
+
+.content main .setting-container .chat-config .header {
+    display: flex;
+    align-items: center;
+    grid-gap: 16px;
+    margin-bottom: 24px;
+    justify-content: center;
+    margin-top: 16px;
+    border-bottom: 2px solid var(--grey);
+}
+
+.content main .chat-config .chat-container .header {
+    width: fit-content;
+    font-size: 12px;
+    padding: 0 18px;
+    color: var(--light-primary);
+    margin: auto;
+    margin-top: 8px;
+}
+
+.content main .chat-config .chat-container form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 20px;
+}
+
+.content main .chat-config .chat-container form .form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 12px;
+    width: 80%;
+}
+
+.content main .chat-config form .form-container label {
+    font-size: 12px;
+    margin-right: auto;
+}
+
+.content main .chat-config form .form-container input {
+    padding: 5px 16px;
+    color: var(--dark-grey);
+    background: white;
+    font-weight: 500;
+    width: 100%;
+}
+
+.content main .chat-config form .form-container textarea {
+    width: 100%;
+    min-height: 180px;
+    padding: 10px;
+}
+
+.content main .chat-config form .form-container .submit-btn {
+    width: 100%;
+    padding: 10px;
+    background: var(--dark);
+    font-size: 16px;
+    color: var(--light);
+    border: none;
+}

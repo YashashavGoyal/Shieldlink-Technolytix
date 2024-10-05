@@ -1,0 +1,119 @@
+.Gen_container {
+    min-height: 100vh; /* Ensures the container takes the full viewport height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    background: linear-gradient(135deg, #1e3c72, #5b5c8b); /* Beautiful blue gradient */
+    overflow: hidden;
+    position: relative;
+    padding: 18px 0;
+    box-sizing: border-box; /* Includes padding in the total width and height */
+}
+
+/* Adding floating shapes for a modern look */
+.Gen_container::before,
+.Gen_container::after {
+    content: '';
+    position: absolute;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    z-index: 0;
+}
+
+.Gen_container::before {
+    width: 200px;
+    height: 200px;
+    top: -50px;
+    left: -50px;
+    background: #2a5298;
+    opacity: 0.4;
+}
+
+.Gen_container::after {
+    width: 250px;
+    height: 250px;
+    bottom: -80px;
+    right: -80px;
+    background: #1e3c72;
+    opacity: 0.4;
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 1024px) {
+    .Gen_container {
+        padding: 15px;
+        height: auto; /* Adjusts height to better fit content */
+    }
+
+    .Gen_container::before {
+        width: 150px;
+        height: 150px;
+        top: -30px;
+        left: -30px;
+    }
+
+    .Gen_container::after {
+        width: 180px;
+        height: 180px;
+        bottom: -50px;
+        right: -50px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .Gen_container {
+        padding: 10px;
+        height: auto; /* Height adjusts based on content */
+        flex-direction: column; /* Stack items vertically if needed */
+    }
+
+    .Gen_container::before,
+    .Gen_container::after {
+        opacity: 0.3; /* Slightly reduce opacity on smaller screens */
+    }
+
+    .Gen_container::before {
+        width: 120px;
+        height: 120px;
+        top: -20px;
+        left: -20px;
+    }
+
+    .Gen_container::after {
+        width: 140px;
+        height: 140px;
+        bottom: -40px;
+        right: -40px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .Gen_container {
+        padding: 5px;
+        justify-content: center;
+        align-items: center; /* Ensures centered alignment on small screens */
+    }
+
+    .Gen_container::before {
+        width: 100px;
+        height: 100px;
+        top: -15px;
+        left: -15px;
+    }
+
+    .Gen_container::after {
+        width: 120px;
+        height: 120px;
+        bottom: -25px;
+        right: -25px;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .Gen_container {
+        padding: 5px;
+        height: auto;
+        flex-direction: column; /* Stack vertically */
+    }
+}
