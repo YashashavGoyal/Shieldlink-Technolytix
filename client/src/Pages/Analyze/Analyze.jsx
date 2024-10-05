@@ -14,7 +14,7 @@ export default function Analyze() {
                     <div className="header">
                         <i className='bx bx-note'></i>
                         <h3>Devices</h3>
-                        <Link to='/user/admin/register-admin'>
+                        <Link to='/user/admin/register-device'>
                             <i style={{ color: 'white' }} className='bx bx-plus'></i>
                         </Link>
                     </div>
@@ -81,9 +81,7 @@ export default function Analyze() {
             <div className="alert-records">
                 <div className="header">
                     <i className='bx bx-note'></i>
-                    <h3>Suspious Activity ~ Alerts</h3>
-                    <i className='bx bx-filter'></i>
-                    <i className='bx bx-search'></i>
+                    <h3>Activity ~ Alerts</h3>
                 </div>
                 <table>
                     <thead>
