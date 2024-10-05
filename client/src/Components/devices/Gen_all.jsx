@@ -1,6 +1,6 @@
 import React from 'react'
 import "./Gen_all.css"
-import GenSelector from './Genselector/Genselector';
+import GenSelector from './Genselector/GenSelector';
 function Gen_all() {
   return (
     <>
