@@ -1,30 +1,27 @@
-import { get } from "firebase/database";
 import { createContext, useContext, useEffect, useState } from "react";
 import { toast } from "react-toastify";
 
+
 export const AuthContext = createContext();
+
 
 export const AuthProvider = ({ children }) => {
 
-    const API = `https://shieldlinktechnolytix.onrender.com`;
-    // const API = ` http://127.0.0.1:2024`;
+    const API = import.meta.env.VITE_API_URL || `http://127.0.0.1:4000`;
 
-    // token state variable
     const [token, setToken] = useState(localStorage.getItem('token'));
 
-
-    // setting token in LS
+    
     const setTokenInLS = (token) => {
         localStorage.setItem("token", token);
         setToken(token);
-    }
+    };
 
-
-    // user state variable
+    
     const [user, setUser] = useState({});
-    const [isLoading, setIsLoading] = useState();
+    const [isLoading, setIsLoading] = useState(false);
 
-    // getting user data
+    
     const getUser = async () => {
         const url = `${API}/api/auth/user/info`;
 
@@ -42,35 +39,35 @@ export const AuthProvider = ({ children }) => {
 
                 if (response.ok) {
                     const userData = await resdata.user;
-                    // console.log(userData);
                     setUser(userData);
-                    setIsLoading(false);
-                }
-                else {
-                    setIsLoading(false);
+                } else {
+                    throw new Error(resdata.message || "Failed to fetch user");
                 }
             }
-
         } catch (error) {
-            console.log(`usr data error`, error);
+            console.error("User data fetch error:", error);
+            toast.error("Failed to fetch user data");
+        } finally {
+            setIsLoading(false);
         }
+    };
 
-    }
-
+    
     useEffect(() => {
         getUser();
-    }, [])
+    }, []);
 
-
+    
     const [deviceData, setDeviceData] = useState({ gen1: [], gen2: [] });
     const [loadingDevice, setDeviceLoading] = useState(true);
     const [error, setError] = useState(null);
 
-    // Fetch devices when the component mounts
+    // Function to fetch devices from the API
     const fetchDevices = async () => {
         try {
+            setDeviceLoading(true);
             const response = await fetch(`${API}/api/device/read`, {
-                method: 'GET', // Assuming GET is used for fetching devices
+                method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',
                     Authorization: `Bearer ${token}`, // Assuming you're using JWT tokens
@@ -79,35 +76,36 @@ export const AuthProvider = ({ children }) => {
 
             const resData = await response.json();
             if (response.ok) {
-                // toast.success(resData.message);
                 setDeviceData(resData.devices); // Store the fetched devices (gen1 and gen2 arrays) in state
-                setDeviceLoading(false);
+            } else {
+                throw new Error(resData.message || "Failed to fetch devices");
             }
         } catch (error) {
             setError(error.message);
+            toast.error("Error fetching devices");
+        } finally {
             setDeviceLoading(false);
         }
     };
 
+    // Fetch device data when token changes
     useEffect(() => {
+        if (token) {
+            fetchDevices();
+        }
+    }, [token]); // Dependency array ensures this runs when the token changes
 
-        fetchDevices();
-        // console.log(deviceData);
-
-    });
-
-
-
-
-
+    // Function to log out the user
     const logoutUser = () => {
-        setToken("");
-        return localStorage.removeItem("token");
-    }
+        setTokenInLS(""); // Clear token from LS and state
+        setUser({}); // Reset user object
+        toast.info("Logged out successfully");
+    };
 
-
+    // Check if the user is logged in
     let isLoggedIn = !!token;
 
+    // Context content to be provided to components
     const contextContent = {
         API,
         token,
@@ -119,8 +117,9 @@ export const AuthProvider = ({ children }) => {
         setTokenInLS,
         getUser,
         logoutUser,
-    }
+    };
 
+    // Provide the context to children
     return (
         <AuthContext.Provider value={contextContent}>
             {children}
@@ -128,11 +127,11 @@ export const AuthProvider = ({ children }) => {
     );
 };
 
-
+// Custom hook to access the AuthContext
 export const useAuth = () => {
     const authContextValue = useContext(AuthContext);
     if (!authContextValue) {
         throw new Error("useAuth used outside of the Provider");
-    };
+    }
     return authContextValue;
-}
+};
