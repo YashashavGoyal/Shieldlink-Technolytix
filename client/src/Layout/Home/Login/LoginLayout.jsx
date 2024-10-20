@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import Navbar from '../Components/Navbar';
+import Navbar from '../../../Components/Navbar';
 import './Login.css';
-import Footer from '../Components/Footer/Footer';
-import img from '../assets/images/Login.png';
-import LoginSvg from '../Components/LoginSvg/LoginSvg';
-import { useAuth } from '../utils/auth';
+import Footer from '../../../Components/Home/Footer/Footer';
+import img from '../../../assets/images/Login.png';
+import LoginSvg from '../../../Components/Home/LoginSvg/LoginSvg';
+import { useAuth } from '../../../utils/auth';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 

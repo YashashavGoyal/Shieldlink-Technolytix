@@ -62,6 +62,12 @@
     margin-bottom: 6px;
 }
 
+.device-list-content .device-box .title a{
+    text-decoration: none;
+    color: var(--light);
+    font-weight: 500;
+}
+
 .device-list-content .device-box .device-box-content {
     display: flex;
     justify-content: space-around;

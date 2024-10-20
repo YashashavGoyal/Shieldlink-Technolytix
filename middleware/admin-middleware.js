@@ -2,7 +2,7 @@ const adminMiddleware = async (req, res, next) => {
     try {
         const user = req.user;
         const isAdmin = user.isAdmin;
-        console.log(user);
+        // console.log(user);
         
         
         if (!isAdmin) {

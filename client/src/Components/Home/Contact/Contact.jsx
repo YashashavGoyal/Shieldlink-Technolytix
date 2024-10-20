@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './ContactUs.css';
-import { useAuth } from '../../utils/auth';
+import { useAuth } from '../../../utils/auth';
 import { toast } from 'react-toastify';
 
 const ContactUs = () => {

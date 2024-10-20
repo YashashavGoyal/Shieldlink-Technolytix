@@ -11,17 +11,17 @@ export const AuthProvider = ({ children }) => {
 
     const [token, setToken] = useState(localStorage.getItem('token'));
 
-    
+
     const setTokenInLS = (token) => {
         localStorage.setItem("token", token);
         setToken(token);
     };
 
-    
+
     const [user, setUser] = useState({});
     const [isLoading, setIsLoading] = useState(false);
 
-    
+
     const getUser = async () => {
         const url = `${API}/api/auth/user/info`;
 
@@ -52,12 +52,12 @@ export const AuthProvider = ({ children }) => {
         }
     };
 
-    
+
     useEffect(() => {
         getUser();
     }, []);
 
-    
+
     const [deviceData, setDeviceData] = useState({ gen1: [], gen2: [] });
     const [loadingDevice, setDeviceLoading] = useState(true);
     const [error, setError] = useState(null);
@@ -90,10 +90,17 @@ export const AuthProvider = ({ children }) => {
 
     // Fetch device data when token changes
     useEffect(() => {
-        if (token) {
-            fetchDevices();
+        const interval = setInterval(() => {
+            if (token) {
+                fetchDevices();
+            }
+        }, 1000);
+        return () => {
+            clearInterval(interval);
         }
     }, [token]); // Dependency array ensures this runs when the token changes
+
+
 
     // Function to log out the user
     const logoutUser = () => {

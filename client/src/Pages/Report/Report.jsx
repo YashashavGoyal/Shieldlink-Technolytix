@@ -7,6 +7,8 @@ export default function Report() {
     const { deviceData, loadingDevice } = useAuth();
     const { gen1 = [], gen2 = [] } = deviceData;
 
+    console.log(deviceData);
+    
 
     if (loadingDevice) {
         return <h1>Loading Reports...</h1>
@@ -15,6 +17,7 @@ export default function Report() {
     return (
         <>
             <div className="device-container">
+                {/* Fetching Data From Firebase */}
                 <DeviceFirebase />
                 <div className="device-list">
                     <div className="device-list-header">
@@ -28,13 +31,9 @@ export default function Report() {
                                 <div className="device-list">
                                     <h1>No Gen-1 Devices</h1>
                                 </div> :
-                                gen1.map((device, index) => {
-                                    return (
-                                        <>
-                                            <Device key={index} group={device} />
-                                        </>
-                                    )
-                                })
+                                gen1.map((device, index) => (
+                                    <Device key={device._id || index} group={device} />
+                                ))
                         }
                     </div>
                 </div>
@@ -50,13 +49,9 @@ export default function Report() {
                                 <div className="device-list">
                                     <h1>No Gen-2 Devices</h1>
                                 </div> :
-                                gen2.map((device, index) => {
-                                    return (
-                                        <>
-                                            <Device key={index} group={device} />
-                                        </>
-                                    )
-                                })
+                                gen2.map((device, index) => (
+                                    <Device key={device._id || index} group={device} />
+                                ))
                         }
                     </div>
                 </div>

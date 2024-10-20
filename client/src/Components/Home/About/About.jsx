@@ -1,9 +1,9 @@
 import React from 'react';
-import device from "../../assets/images/Prototype.webp";
-import Rishabh from "../../assets/images/Rishabh_Bhaiya.webp";
-import Vikas from "../../assets/images/sujal_bhaiya.webp";
-import Mayank from "../../assets/images/Mayank_Bhaiya.webp";
-import Sujal from "../../assets/images/vikas_bhaiya.webp";
+import device from "../../../assets/images/Prototype.webp";
+import Rishabh from "../../../assets/images/Rishabh_Bhaiya.webp";
+import Vikas from "../../../assets/images/sujal_bhaiya.webp";
+import Mayank from "../../../assets/images/Mayank_Bhaiya.webp";
+import Sujal from "../../../assets/images/vikas_bhaiya.webp";
 
 import './About.css';
 import Footer from '../Footer/Footer';

@@ -1,0 +1,46 @@
+/* DeviceDetailsPage.css */
+.device-details-container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.user-info, .device-info, .map-container, .rssi-graph-container {
+    margin-bottom: 20px;
+    padding: 10px;
+    background: #f5f5f5;
+    border-radius: 8px;
+    height: fit-content;
+}
+
+h2 {
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+}
+
+/* Responsive Layout */
+@media (min-width: 768px) {
+    .device-details-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .user-info, .device-info {
+        width: 48%;
+    }
+
+    .map-container, .rssi-graph-container {
+        width: 100%;
+    }
+}
+
+@media (max-width: 767px) {
+    .device-details-container {
+        flex-direction: column;
+    }
+
+    .user-info, .device-info, .map-container, .rssi-graph-container {
+        width: 100%;
+    }
+}

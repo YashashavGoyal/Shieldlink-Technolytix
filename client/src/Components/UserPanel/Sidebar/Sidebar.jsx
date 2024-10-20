@@ -25,7 +25,12 @@ export default function Sidebar({ isSidebarClosed }) {
                             <i className='bx bx-analyse'></i>Analytics
                         </NavLink>
                     </li>
-                    <li className={""
+                    <li className={isActive("/report") ? "active" : ""}>
+                        <NavLink to="/user/admin/report">
+                            <i className='bx bx-receipt'></i>Report
+                        </NavLink>
+                    </li>
+                    {/* <li className={""
                         // isActive("/report") ||
                         // isActive("/report/gen-1") ||
                         // isActive("/report/gen-2") ||
@@ -52,7 +57,7 @@ export default function Sidebar({ isSidebarClosed }) {
                                 </NavLink>
                             </div>
                         </details>
-                    </li>
+                    </li> */}
                     <li className={isActive("/profile") ? "active" : ""}>
                         <NavLink to="/user/admin/profile">
                             <i className='bx bx-user'></i>Profile

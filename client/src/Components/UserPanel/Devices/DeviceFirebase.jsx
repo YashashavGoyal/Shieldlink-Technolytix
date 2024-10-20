@@ -35,7 +35,7 @@ export default function DeviceFirebase({ children }) {
         // Listener for RSSI
         const unsubscribeRssi = onValue(rssiRef, (snapshot) => {
             const data = snapshot.val();
-            console.log('RSSI Data:', data); // Log data for debugging
+            // console.log('RSSI Data:', data); // Log data for debugging
             if (data) {
                 setRssiDevices(Object.values(data)); // Storing devices in state
             }
@@ -44,7 +44,7 @@ export default function DeviceFirebase({ children }) {
         // Listener for RSSI-433Mhz
         const unsubscribeRssi433Mhz = onValue(rssi433MhzRef, (snapshot) => {
             const data = snapshot.val();
-            console.log('RSSI-433Mhz Data:', data); // Log data for debugging
+            // console.log('RSSI-433Mhz Data:', data); // Log data for debugging
             if (data) {
                 setRssi433MhzDevices(Object.values(data)); // Storing devices in state
             }
@@ -53,7 +53,7 @@ export default function DeviceFirebase({ children }) {
         // Listener for RSSI-2.4Ghz
         const unsubscribeRssi24Ghz = onValue(rssi24GhzRef, (snapshot) => {
             const data = snapshot.val();
-            console.log('RSSI-2.4Ghz Data:', data); // Log data for debugging
+            // console.log('RSSI-2.4Ghz Data:', data); // Log data for debugging
             if (data) {
                 setRssi24GhzDevices(Object.values(data)); // Storing devices in state
             }

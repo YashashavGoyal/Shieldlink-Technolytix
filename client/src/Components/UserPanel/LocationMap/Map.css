@@ -1,0 +1,15 @@
+/* Ensure the container has a valid height */
+.map-container {
+    height: 100%;   /* Set a fixed height */
+    width: 100%;     /* Full width */
+    margin-bottom: 20px;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    padding: 20px !important;
+}
+
+/* Leaflet specific container, should inherit height and width */
+.leaflet-container {
+    height: 100%;
+    width: 100%;
+}
