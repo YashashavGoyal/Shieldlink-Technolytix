@@ -90,14 +90,9 @@ export const AuthProvider = ({ children }) => {
 
     // Fetch device data when token changes
     useEffect(() => {
-        const interval = setInterval(() => {
             if (token) {
                 fetchDevices();
             }
-        }, 1000);
-        return () => {
-            clearInterval(interval);
-        }
     }, [token]); // Dependency array ensures this runs when the token changes
 
 
