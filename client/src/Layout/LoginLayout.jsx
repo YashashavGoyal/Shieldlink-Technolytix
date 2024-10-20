@@ -41,7 +41,7 @@ export default function LoginLayout() {
                 setTokenInLS(resData.token)
                 navigate('/user/admin/dashboard');
             } else {
-                console.error('Login failed:', data.message);
+                console.error('Login failed:', resData.message);
                 toast.error('Login Failed');
             }
         } catch (error) {
