@@ -45,7 +45,7 @@ const loginUser = async (req, res, next) => {
 // Update User
 const updateUser = async (req, res) => {
     try {
-        const id = req.user.userId;
+        const id = req.user._id;
         const updateUser = req.body;
         console.log(updateUser);
         
@@ -93,8 +93,12 @@ const updateUser = async (req, res) => {
 // Getting User Info
 const getUser = async (req, res) => {
     try {
-        const id = req.user.userId;
-        const userData = await User.findOne({ _id: id }, { password: 0 });
+        const id = req.user._id;
+        console.log(req.user)
+        const userData = await User.findById(id);
+
+        console.log(userData);
+        
 
         if (!userData) {
             return res.status(404)

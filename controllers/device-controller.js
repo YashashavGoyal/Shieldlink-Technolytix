@@ -4,9 +4,9 @@ const User = require('../models/user-model');
 // Function to register a device
 const registerDevice = async (req, res, next) => {
     try {
-        const userId = req.user.userId; // Extract userId from the authenticated user object
-        const { devicetype } = req.params; // Get device type from request parameters
-        const { name } = req.body; // Get device name from request body
+        const userId = req.user._id;
+        const { devicetype } = req.params;
+        const { name } = req.body;
 
         // Find the user by ID
         const user = await User.findById(userId);
@@ -37,12 +37,12 @@ const registerDevice = async (req, res, next) => {
         if (devicetype === 'gen1') {
             newDevice = new Gen1({
                 name,
-                user: userId, // Use the user's ObjectId
+                user: userId, 
             });
         } else if (devicetype === 'gen2') {
             newDevice = new Gen2({
-                name, // Assuming you want to set the name for gen2 as well
-                user: userId, // Use the user's ObjectId
+                name, 
+                user: userId, 
             });
         }
 
@@ -61,7 +61,7 @@ const registerDevice = async (req, res, next) => {
 
         return res.status(200).json({
             message: `Device successfully registered and added to ${devicetype}`,
-            device: newDevice, // Return the newly created device for confirmation
+            device: newDevice, 
         });
 
     } catch (error) {
@@ -122,7 +122,7 @@ const deleteDevice = async (req, res) => {
     try {
         const { id } = req.params;
         const { devicetype } = req.params;
-        const userId = req.user.userId; // Ensure you're getting userId from the user object
+        const userId = req.user.userId; 
 
         console.log("User ID:", userId);
         console.log("Device ID:", id);
@@ -169,7 +169,7 @@ const deleteDevice = async (req, res) => {
 // Function to fetch all devices (gen1 and gen2) for a user
 const getAllDevicesForUser = async (req, res) => {
     try {
-        const userId = req.user.userId;
+        const userId = req.user._id;
 
         // Find the user and populate the device arrays with full device details
         const user = await User.findById(userId)

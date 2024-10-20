@@ -19,7 +19,7 @@ const authmiddleware = async (req, res, next) => {
 
         // Verify the JWT token
         const isVerified = jwt.verify(userToken, process.env.JWT_SECRET_KEY);
-
+        
         if (!isVerified) {
             return res.status(401).json({ message: "Token could not be verified" });
         }
@@ -27,15 +27,18 @@ const authmiddleware = async (req, res, next) => {
         // Find the user in the database (await the promise)
         const userData = await User.findOne({ email: isVerified.email }).select({
             password: 0, // Exclude password from the result
-        });
+        });        
 
         if (!userData) {
+            console.log("NOT FOUND");
             return res.status(401).json({ message: "User not found" });
+            
         }
 
         // Attach user data to the request object
         req.user = userData;
         req.token = userToken;
+        req.userId = userData._id;
 
         next(); // Proceed to the next middleware
     } catch (err) {
