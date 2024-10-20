@@ -47,7 +47,7 @@ const updateUser = async (req, res) => {
     try {
         const id = req.user._id;
         const updateUser = req.body;
-        console.log(updateUser);
+        // console.log(updateUser);
         
 
         // Validate the updateUser object to avoid updating restricted fields
@@ -94,10 +94,10 @@ const updateUser = async (req, res) => {
 const getUser = async (req, res) => {
     try {
         const id = req.user._id;
-        console.log(req.user)
+        // console.log(req.user)
         const userData = await User.findById(id);
 
-        console.log(userData);
+        // console.log(userData);
         
 
         if (!userData) {

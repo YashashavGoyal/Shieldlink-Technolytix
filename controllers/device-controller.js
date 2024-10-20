@@ -124,20 +124,20 @@ const deleteDevice = async (req, res) => {
         const { devicetype } = req.params;
         const userId = req.user.userId; 
 
-        console.log("User ID:", userId);
-        console.log("Device ID:", id);
-        console.log("Device Type:", devicetype);
+        // console.log("User ID:", userId);
+        // console.log("Device ID:", id);
+        // console.log("Device Type:", devicetype);
 
         let device, model;
 
         // Check if the device is of type gen1 or gen2
         if (devicetype === 'gen1') {
             device = await Gen1.findOne({ _id: id, user: userId });
-            console.log("Found Gen1 Device:", device);
+            // console.log("Found Gen1 Device:", device);
             model = 'gen1';
         } else if (devicetype === 'gen2') {
             device = await Gen2.findOne({ _id: id, user: userId });
-            console.log("Found Gen2 Device:", device);
+            // console.log("Found Gen2 Device:", device);
             model = 'gen2';
         } else {
             return res.status(400).json({ message: 'Invalid device type' });

@@ -7,7 +7,7 @@ export default function Report() {
     const { deviceData, loadingDevice } = useAuth();
     const { gen1 = [], gen2 = [] } = deviceData;
 
-    console.log(deviceData);
+    // console.log(deviceData);
     
 
     if (loadingDevice) {
